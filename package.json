@@ -1,0 +1,63 @@
+{
+    "name": "ljvscodeplugins",
+    "displayName": "LJVScodePlugins",
+    "description": "for my works only",
+    "version": "0.0.1",
+    "publisher": "blinkJun",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.openFolder",
+        "onCommand:extension.openCmd",
+        "onCommand:extension.startSass"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.openFolder",
+                "title": "open this folder"
+            },
+            {
+                "command": "extension.openCmd",
+                "title": "open cmd in this folder"
+            },
+            {
+                "command": "extension.startSass",
+                "title": "start sass watch"
+            }
+        ],
+        "keybindings": [                             
+            {
+                "command": "extension.openFolder",    
+                "key": "ctrl+alt+d",                
+                "mac": "cmd+alt+d"                  
+            },
+            {
+                "command": "extension.openCmd",    
+                "key": "alt+c",                
+                "mac": "cmd+c"                  
+            },
+            {
+                "command": "extension.startSass",    
+                "key": "alt+F1",                
+                "mac": "cmd+F1"                  
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
