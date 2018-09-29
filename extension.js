@@ -34,11 +34,10 @@ function activate(context) {
         let files = vscode.workspace.textDocuments; 
         let dirPath =path.dirname(files[files.length - 1].fileName);
         let dirPathList = dirPath.split('\\');
-        if (dirPath.indexOf('weath\\src') >-1) {
-            // weath.git start gulp need param
-            let length=dirPathList.length;
-            let wealthParam = `${dirPathList[length-3]}:${dirPathList[length-2]}:${dirPathList[length-1]}`;
-            child_process.exec(`start gulp watch --param ${wealthParam}`, {
+        // 是否在h5文件下
+        if (dirPathList.includes('h5')) {
+            // 开启h5的监控
+            child_process.exec(`start gulp -h5`, {
                 cwd: dirPath
             }, function(error, stdout, stderr) {
                 if (error !== null) {
@@ -46,7 +45,7 @@ function activate(context) {
                 }
             });
         } else {
-            // html.git  start gulp
+            // 开启pc的监控
             child_process.exec(`start gulp`, {
                 cwd: dirPath
             }, function(error, stdout, stderr) {
