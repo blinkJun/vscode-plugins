@@ -2,7 +2,7 @@
     "name": "ljvscodeplugins",
     "displayName": "LJVScodePlugins",
     "description": "for my works only",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "blinkJun",
     "engines": {
         "vscode": "^1.23.0"
@@ -16,6 +16,7 @@
         "onCommand:extension.startSass"
     ],
     "main": "./extension",
+    "repository": "https://github.com/blinkJun/vscode-plugins.git",
     "contributes": {
         "commands": [
             {
